@@ -19,8 +19,7 @@ void Automata::on() {
     if (state == OFF) {
         state = WAIT;
         std::cout << "Coffee Machine activated\n" << std::endl;
-    }
-    else {
+    } else {
         std::cout << "Coffee Machine is already activated\n" << std::endl;
     }
 }
@@ -29,8 +28,7 @@ void Automata::off() {
     if (state == WAIT) {
         state = OFF;
         std::cout << "Coffee Machine deactivated\n" << std::endl;
-    }
-    else {
+    } else {
         std::cout << "Coffee Machine is already deactivated\n" << std::endl;
     }
 }
@@ -40,8 +38,7 @@ void Automata::coin(int money) {
         cash += money;
         state = ACCEPT;
         std::cout << "Money received. Total cash: " << cash << "p.\n" << std::endl;
-    }
-    else {
+    } else {
         std::cout << "Error occured while coins recieving\n" << std::endl;
     }
 }
@@ -70,8 +67,7 @@ void Automata::choice(std::string name) {
     if (state == ACCEPT) {
         if (prices.count(name) == 0) {
             std::cout << "Chosen drink was not found :(\n";
-        }
-        else {
+        } else {
             state = CHECK;
             if (check(name))
                 cook(name);
@@ -84,8 +80,7 @@ void Automata::cancel() {
         cash = 0;
         state = WAIT;
         std::cout << "Ordering process was cancelled\n" << std::endl;
-    }
-    else {
+    } else {
         std::cout << "Cancel can't be performed\n" << std::endl;
     }
 }

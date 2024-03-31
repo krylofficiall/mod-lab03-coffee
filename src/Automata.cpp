@@ -47,7 +47,7 @@ void Automata::getMenu() {
     std::cout << "Coffee machine menu:" << std::endl;
     if (state == WAIT || state == ACCEPT) {
         for (const auto& element : prices)
-            std::cout<<element.first << " " << element.second << "p." << std::endl;
+            std::cout << element.first << element.second << std::endl;
     }
 }
 

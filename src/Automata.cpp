@@ -37,7 +37,7 @@ void Automata::coin(int money) {
     if (state == WAIT || state == ACCEPT) {
         cash += money;
         state = ACCEPT;
-        std::cout << "Money received. Total cash: " << cash << "p.\n" << std::endl;
+        std::cout << "Total cash: " << cash << "p.\n" << std::endl;
     } else {
         std::cout << "Error occured while coins recieving\n" << std::endl;
     }
@@ -47,7 +47,7 @@ void Automata::getMenu() {
     std::cout << "Coffee machine menu:" << std::endl;
     if (state == WAIT || state == ACCEPT) {
         for (const auto& element : prices)
-            std::cout << element.first << " --> " << element.second << "p." << std::endl;
+            std::cout << element.first << "-->" << element.second << "p." << std::endl;
     }
 }
 
@@ -89,7 +89,7 @@ void Automata::cook(std::string name) {
     std::cout << "Cooking in progress!\n" << std::endl;
     cash -= prices.find(name)->second;
     state = COOK;
-    std::cout << "Your " << prices.find(name)-> first << " cooked, please take a drink.\n" << std::endl;
+    std::cout << "Your " << prices.find(name)-> first << " cooked\n" << std::endl;
     finish(name);
 }
 

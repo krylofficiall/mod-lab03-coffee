@@ -15,7 +15,7 @@ TEST(AutomataTest, TEST1) {
     Machine.on();
     Machine.on();
     Machine.off();
-    EXPECT_EQ(Off, Machine.getState());
+    EXPECT_EQ(OFF, Machine.getState());
 }
 
 TEST(AutomataTest, TEST2) {
@@ -41,7 +41,7 @@ TEST(AutomataTest, TEST4) {
     Machine.choice("Latte Maciato");
     Machine.cook("Latte Maciato");
     Machine.finish("Latte Maciato");
-    EXPECT_EQ(Wait, Machine.getState());
+    EXPECT_EQ(WAIT, Machine.getState());
 }
 
 TEST(AutomataTest, TEST5) {
@@ -51,6 +51,6 @@ TEST(AutomataTest, TEST5) {
     Machine.choice("Espresso");
     Machine.cook("Espresso");
     Machine.finish("Espresso");
-    EXPECT_EQ(Wait, Machine.getState());
+    EXPECT_EQ(WAIT, Machine.getState());
 }
 
